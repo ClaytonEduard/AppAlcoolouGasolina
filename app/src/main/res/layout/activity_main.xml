@@ -46,9 +46,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPrecoAlcool"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Preço álcool ex: 3.50" />
+            android:hint="Preço álcool ex: 3.50"
+            android:inputType="number|numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -63,9 +65,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPrecoGasolina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Preço gasolina ex: 4.75" />
+            android:hint="Preço gasolina ex: 4.75"
+            android:inputType="number|numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -75,13 +79,14 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:onClick="calcularPreco"
         android:text="Cacular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textResultado"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -94,5 +99,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center_horizontal"
+        android:text="Se o resultado de Álcool / Gasolina for maior ou igual a 0.7, é melhor utilizar Gasolina, senão é melhor utilizar Álcool"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textResultado" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
